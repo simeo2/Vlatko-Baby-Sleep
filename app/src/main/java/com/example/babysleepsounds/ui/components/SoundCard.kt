@@ -64,7 +64,7 @@ fun SoundCard(
                     Icon(if (state.isPlaying) Icons.Rounded.Pause else Icons.Rounded.PlayArrow, contentDescription = if (state.isPlaying) "Pause ${state.sound.displayName}" else "Play ${state.sound.displayName}", tint = Color.White)
                 }
             }
-            Text(state.sound.displayName, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(state.sound.displayName, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Text("Volume", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.weight(1f))

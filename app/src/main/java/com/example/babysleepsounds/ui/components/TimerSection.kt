@@ -46,7 +46,7 @@ fun TimerSection(selectedTimerOption: SleepTimerOption?, isTimerPreviewActive: B
             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
                 AlarmCloudIllustration(Modifier.size(76.dp))
                 Column {
-                    Text("Sleep Timer", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.ExtraBold)
+                    Text("Sleep Timer", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.ExtraBold, color = Color.White)
                     Text("Sounds will gently stop after the timer ends.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
@@ -57,8 +57,8 @@ fun TimerSection(selectedTimerOption: SleepTimerOption?, isTimerPreviewActive: B
                 }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Button(onClick = { onSelectTimer(selectedTimerOption ?: SleepTimerOption.Thirty) }, modifier = Modifier.weight(1f), shape = RoundedCornerShape(20.dp), colors = ButtonDefaults.buttonColors(containerColor = SoftLavender)) { Icon(Icons.Rounded.Bedtime, null); Spacer(Modifier.size(8.dp)); Text("Start Timer") }
-                OutlinedButton(onClick = onClearTimerSelection, enabled = isTimerPreviewActive, shape = RoundedCornerShape(20.dp), border = BorderStroke(1.dp, Color.White.copy(alpha = 0.25f))) { Text("Clear Timer") }
+                Button(onClick = { onSelectTimer(selectedTimerOption ?: SleepTimerOption.Thirty) }, modifier = Modifier.weight(1f), shape = RoundedCornerShape(20.dp), colors = ButtonDefaults.buttonColors(containerColor = SoftLavender, contentColor = Color.White)) { Icon(Icons.Rounded.Bedtime, null); Spacer(Modifier.size(8.dp)); Text("Start Timer", fontWeight = FontWeight.Bold) }
+                OutlinedButton(onClick = onClearTimerSelection, enabled = isTimerPreviewActive, shape = RoundedCornerShape(20.dp), border = BorderStroke(1.dp, Color.White.copy(alpha = 0.25f)), colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White, disabledContentColor = Color.White.copy(alpha = .38f))) { Text("Clear Timer") }
             }
         }
     }
